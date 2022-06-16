@@ -1,14 +1,7 @@
 var express = require("express");
 var router = express.Router();
-const oracledb = require("oracledb");
 
-// var connection = require("../config/db-config");
-
-let connection = oracledb.getConnection({
-  user: "intern",
-  password: "intern",
-  connectString: "172.17.1.108:1521/CILDEV",
-});
+const connection = require("../config/db-config");
 
 router.get("/", function (req, res, next) {
   sqlQuery = "SELECT * FROM sales_bills.fois_rr_divr_dtl;";
