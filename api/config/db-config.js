@@ -4,8 +4,8 @@ const oracledb = require("oracledb");
 
 const config = {
   user: "intern",
-  password: "intern",
-  connectString: "172.17.1.108:1521/CILDEV",
+  password: process.env.PASSWORD,
+  connectString: process.env.CONNECT_STRING,
 };
 
 let dbConnection;
