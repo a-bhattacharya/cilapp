@@ -1,5 +1,8 @@
 var express = require("express");
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc1582ddb5b77359ee769070f83e78538ecdf11d
 var router = express.Router();
 
 const dbQuery = require("../services/db_queries");
@@ -28,12 +31,16 @@ WHERE trunc(RMVLTIME) between to_date(:FROMDT,'dd-MON-yyyy') and  to_date(:TODT,
 ) k
 GROUP BY k.cnsr`;
   const binds = { FROMDT: req.query.from, TODT: req.query.to };
+<<<<<<< HEAD
 
   (async () => {
     const queryResult = await dbQuery(query, binds);
     console.log(queryResult);
     res.send(queryResult);
   })();
+=======
+  dbQuery(query, binds);
+>>>>>>> fc1582ddb5b77359ee769070f83e78538ecdf11d
 });
 
 module.exports = router;
